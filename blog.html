@@ -8,10 +8,16 @@
 		margin: 0 auto;
 		padding: 20px;
 	  }
-	  body{
-		background-image: url('https://st4.depositphotos.com/7048110/37763/v/600/depositphotos_377638046-stock-video-close-footage-moon-jellyfish-black.jpg');
-	    background-size:cover ;
-	}
+	  
+	header {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15)),
+    url("https://www.sleepscore.com/wp-content/uploads/2017/10/Light-blog2-2560x1280.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 	  textarea {
   width: 100%;
   height:90vh;
@@ -78,40 +84,54 @@
     
 }
 
-
-
-
-.menu{
-    width: 600px;
-    float: right;
-    height: 70px;
+nav {
+  width: 100%;
+  height: 15vh;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-transform: uppercase;
+}
+.menu a:nth-child(2) {
+  margin-right: 17px;
 }
 
-ul{
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+nav .logo {
+  width: 25%;
+  text-align: center;
+  /*background: red;*/
 }
 
-ul li{
-    list-style: none;
-    margin-left: 62px;
-    margin-top: 27px;
-    font-size: 14px;
+nav .menu {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
 }
 
-ul li a{
-    text-decoration: none;
-    color: #fff;
-    font-family: Arial;
-    font-weight: bold;
-    transition: 0.4s ease-in-out;
+nav .menu a {
+  width: 25%;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-family: "Josefin Sans", sans-serif;
+
 }
 
-ul li a:hover{
-    color: #ff7200;
+body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:#FFFFFF;
+            background-image: url('https://www.sleepscore.com/wp-content/uploads/2017/10/Light-blog2-2560x1280.jpg');
+            margin: 0;
+            background-size: cover;
+        }
+
+
+nav .menu a:first-child {
+  color: #00b894;
 }
+
 
 
 
@@ -120,33 +140,28 @@ ul li a:hover{
 
 
     
-    </style>
+   
 	  
 	  </style>
   </head>
   <body>
-    <div class="container">
-		<nav class="navbar  navbar-fixed-top navbar-inverse">
+	<header>
+
+	
+    
+		<nav >
 			
-				<div class="main">
-					<div class="navbar">
-						<div class="icon">
-						  
-						</div>
 			
-						<div class="menu">
-							<ul>
-							 
-								<li><a href="./index.html">HOME</a></li>
-							   
-								<li><a href="./works.html">FEATURE</a></li>
-								<li><a href="./blog.html">BLOG</a></li>
-								<li><a href="./contact.html">CONTACT </a></li>
-							</ul>
-						</div>
-			
-			</div>
-		</nav>
+	<div class="menu">
+		<a href="./index.html" style="font-size: 20px">Home</a>
+    <a href="./selfassessment.html">Stress_test</a>
+		<a href="./works.html">Features</a>
+		<a href="./blog.html">Blog</a>
+		<a href="./contact.html">contact</a>
+    
+        
+	</div>
+		</nav><div class="container">
       <h1>Daily Blog</h1>
       <form id="blog-form">
         <label for="title" id="a">Title:</label>
@@ -232,7 +247,7 @@ onValue(ref(database, "blogs"), (snapshot) => {
 
 
 
-
+</header>
 
   </body>
 </html>

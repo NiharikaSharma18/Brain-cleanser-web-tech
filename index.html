@@ -1,261 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <title>Webpage Design</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<style>
-  *{
-    margin: 0;
-    padding: 0;
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+      <style>
+        
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
 }
 
-.main{
+header {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.15)),
+    url("https://www.sleepscore.com/wp-content/uploads/2017/10/Light-blog2-2560x1280.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media screen and (max-width: 480px) {
+  /* Responsive styles go here */
+
+  /* Change the layout of the header on screens smaller than 480px */
+  .header {
+    text-align: center;
+  }
+
+  /* Move the navigation bar to the top of the page on screens smaller than 480px */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    background-image: url('https://media-cldnry.s-nbcnews.com/image/upload/newscms/2020_50/3434475/201209-pandemic-vices-cover-2x1-cs.gif');
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
+  }
+
+  /* Hide the footer on screens smaller than 480px */
+  .footer {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* Responsive styles go here */
+
+  /* Hide the sidebar on screens smaller than 768px */
+  .sidebar {
+    display: none;
+  }
+
+  /* Increase the font size on screens smaller than 768px */
+  body {
+    font-size: 16px;
+  }
+}
+nav {
+  width: 100%;
+  height: 10vh;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+nav .logo {
+  width: 25%;
+  text-align: center;
+}
+
+nav .menu {
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav .menu a {
+  width: 25%;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+nav .menu a:first-child {
+  color: #00b894;
+}
+
+main {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+section h3 {
+  font-size: 35px;
+  font-weight: 200;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 2px black;
+}
+
+section h1 {
+  margin: 30px 0 20px 0;
+  font-size: 35px;
+  font-weight: 700;
+  text-shadow: 2px 1px 5px black;
+  text-transform: uppercase;
+}
+
+section p {
+  font-size: 25px;
+  word-spacing: 2px;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 1px black;
+}
+
+section a {
+  padding: 12px 30px;
+  border-radius: 4px;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 1s ease;
+}
+
+section .btnone {
+  background: #fff;
+  color: #000;
+}
+
+.btnone:hover {
+  background: #00b894;
+  color: white;
+}
+
+section .btntwo {
+  background: #00b894;
+  color: white;
+}
+
+.btntwo:hover {
+  background: #fff;
+  color: #000;
+}
+
+.change_content:after {
+  content: "";
+  animation: changetext 8s infinite linear;
+  color: #00b894;
+}
+
+@keyframes changetext {
+  0% {
+    content: "Mental health";
+  }
+  20% {
+    content: "Physical health";
+  }
+  35% {
+    content: "sleep cycles";
+  }
+  footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  
+  color: #FFFFFF;
+  padding: 7px;
+  text-align: center;
+  font-size: 16px;
+}
   
 }
-
-.navbar{
-    width: 1200px;
-    height: 75px;
-    margin: auto;
-    
-}
-
-.icon{
-    width: 200px;
-    float: left;
-    height: 70px;
-}
-
-.logo{
-    color: white;
-    font-size: 25px;
-    font-family: Arial;
-    
-    
-    padding-top: 10px;
-    margin-top: 5px
-}
-
-.menu{
-    width: 460px;
-    float: right;
-    height: 70px;
-}
-
-ul{
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-ul li{
-    list-style: none;
-    margin-left: 62px;
-    margin-top: 27px;
-    font-size: 14px;
-}
-
-ul li a{
-    text-decoration: none;
-    color: #fff;
-    font-family: Arial;
-    font-weight: bold;
-    transition: 0.4s ease-in-out;
-}
-
-ul li a:hover{
-    color: #ff7200;
-}
-
-.search{
-    width: 330px;
-    float: left;
-    margin-left: 270px;
-}
-
-.srch{
-    font-family: 'Times New Roman';
-    width: 200px;
-    height: 40px;
-    background: transparent;
-    border: 1px solid #ff7200;
-    margin-top: 13px;
-    color: #fff;
-    border-right: none;
-    font-size: 16px;
-    float: left;
-    padding: 10px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-}
-
-.btn{
-    width: 100px;
-    height: 40px;
-    background: #ff7200;
-    border: 2px solid #ff7200;
-    margin-top: 13px;
-    color: #fff;
-    font-size: 15px;
-    border-bottom-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    transition: 0.2s ease;
-    cursor: pointer;
-}
-.btn:hover{
-    color: #000;
-}
-
-.btn:focus{
-    outline: none;
-}
-
-.srch:focus{
-    outline: none;
-}
-
-.content{
-    width: 1200px;
-    height: auto;
-    margin: auto;
-    color: #fff;
-    position: relative;
-}
-
-.content .par{
-    padding-left: 20px;
-    padding-bottom: 25px;
-    font-family: Arial;
-    letter-spacing: 1.2px;
-    line-height: 30px;
-}
-
-.content h1{
-    font-family: 'Times New Roman';
-    font-size: 50px;
-    padding-left: 20px;
-    margin-top: 9%;
-    letter-spacing: 2px;
-}
-
-.content .cn{
-    width: 160px;
-    height: 40px;
-    background: #ff7200;
-    border: none;
-    margin-bottom: 10px;
-    margin-left: 20px;
-    font-size: 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: .4s ease;
-    
-}
-
-.content .cn a{
-    text-decoration: none;
-    color: #000;
-    transition: .3s ease;
-}
-
-.cn:hover{
-    background-color: #fff;
-}
-
-.content span{
-    color: #ff7200;
-    font-size: 65px
-}
-
-
-
-
-.btnn{
-    width: 240px;
-    height: 40px;
-    background: #ff7200;
-    border: none;
-    margin-top: 30px;
-    font-size: 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    color: #fff;
-    transition: 0.4s ease;
-}
-.btnn:hover{
-    background: #fff;
-    color: #ff7200;
-}
-.btnn a{
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-}
-
-.liw{
-    padding-top: 15px;
-    padding-bottom: 10px;
-    text-align: center;
-}
-.icons a{
-    text-decoration: none;
-    color: #fff;
-}
-.icons ion-icon{
-    color: #fff;
-    font-size: 30px;
-    padding-left: 14px;
-    padding-top: 5px;
-    transition: 0.3s ease;
-}
-.icons ion-icon:hover{
-    color: #ff7200;
-}
-</style>
+      </style>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
 
-    <div class="main">
-        <div class="navbar">
-            <div class="icon">
-                <h2 class="logo">Brain cleanser</h2>
-            </div>
+<header>
+	
+<nav>
+	<div class="logo"> <h1 style="font-size: 20px;"> Brain cleanser </h1> </div>
+	<div class="menu">
+		<a href="./index.html" style="font-size: 20px">Home</a>
+    <a href="./selfassessment.html">Stress_test</a>
+		<a href="./works.html">Features</a>
+		<a href="./blog.html">Blog</a>
+		<a href="./contact.html">contact</a>
+    
+        
+	</div>
+</nav>
+<br>
+<p style="color:white;font-size:large; font-weight:bold">Total time spend: <span id="time"></span></p>
 
-            <div class="menu">
-                <ul>
-                 
-                    <li><a href="./index.html">HOME</a></li>
-                   
-                    <li><a href="./works.html">FEATURE</a></li>
-                    <li><a href="./blog.html">BLOG</a></li>
-                    <li><a href="./contact.html">CONTACT </a></li>
-                </ul>
-            </div>
 
-   
-            <br>
-            <p style="color:white;font-size:large; font-weight:bold">Total time spend: <span id="time"></span></p>
 
-            
+<script src="tracker.js"></script>
+
+	<main>
+		<section>
+			<h3>Seek serenity, release stress</h3>
+			<h1>Stress and anxiety harms <span class="change_content"> </span> <span style="margin-top: -10px;"> | </span> </h1>
+			<p>Burst Your Stress </p>
+			<a href="#" class="btnone">learn more</a>
+			<a href="signup.html" class="btntwo">signup here</a>
+		</section>
   
-            <script src="tracker.js"></script>
-           
-           
-           
-        </div>
-       
-        </div>
-      
+  
+	</main>
 
-             
-
-                
+ 
+</header>
 
 </body>
 </html>
