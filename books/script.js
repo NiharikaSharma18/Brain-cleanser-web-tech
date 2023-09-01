@@ -41,7 +41,7 @@ const toggleSpinner = style => {
        div.classList = "col-sm-6 col-lg-4"
        div.innerHTML = `
           <div id="bookBox" class="book-box">
-             <h4>${count}</h4>
+             <h4></h4>
              <div class="book-info">
                 <h5 class="title">${title.slice(0, 10)}</h5>
                 <p>By: ${author_name}</p>
